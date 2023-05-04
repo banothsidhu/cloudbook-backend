@@ -6,7 +6,7 @@ const connectToMongoDB = () => {
   mongoose.connect(mongooseURI)
     .then(() => console.log('Connected to MongoDB'))
     .catch(error => {
-      console.log('Error connecting to MongoDB:', error.message);
+      console.error('Error connecting to MongoDB:', error.message);
       process.exit(1); // Exit the process if there is an error connecting to MongoDB
     });
 };
