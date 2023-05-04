@@ -14,8 +14,8 @@ async function startServer() {
       res.send('This is backend');
     });
     const corsOptions = {
-      origin: "https://mycloudbook.vercel.app"
-    };
+  origin: ["https://mycloudbook.vercel.app", "https://mycloudbook.netlify.app"]
+};
     app.use(cors(corsOptions));
     app.use('/api/auth', require('./routes/auth'));
     app.use('/api/notes', require('./routes/notes'));
