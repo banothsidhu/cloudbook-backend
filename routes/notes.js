@@ -3,6 +3,7 @@ const fetchuser = require('../middleware/fetchuser');
 const router = express.Router();
 const Note = require('../models/note');
 const { body, validationResult } = require('express-validator');
+const mongoose = require('mongoose');
 
 // Fetch All Notes Of A User ---------------------------
 
