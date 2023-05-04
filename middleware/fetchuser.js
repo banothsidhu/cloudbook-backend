@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
-const JWT_TOKEN = 'This Is The JWT Token';
+
+require('dotenv').config();
+const JWT_TOKEN = process.env.JWT_TOKEN
 
 const fetchuser = (req, res, next) => {
     console.log("Iam from fetchuser")
