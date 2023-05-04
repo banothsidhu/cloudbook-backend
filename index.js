@@ -6,8 +6,9 @@ const app = express();
 const cors = require('cors');
 const port = process.env.PORT || 5000;
 
-connectToMongoDB()
-  .then(() => {
+async function startServer() {
+  try {
+    await connectToMongoDB();
     app.use(express.json());
     app.get('/', (req, res) => {
       res.send('This is backend');
@@ -21,8 +22,10 @@ connectToMongoDB()
     app.listen(port, () => {
       console.log(`MyCloudBook Backend running at http://localhost:${port}`);
     });
-  })
-  .catch(error => {
+  } catch (error) {
     console.log('Error connecting to MongoDB:', error.message);
     process.exit(1); // Exit the process if there is an error connecting to MongoDB
-  });
+  }
+}
+
+startServer();
