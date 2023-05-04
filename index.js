@@ -14,7 +14,7 @@ async function startServer() {
       res.send('This is backend');
     });
     const corsOptions = {
-      origin: "https://mycloudbook.vercel.app"
+      origin: "http://localhost:3000"
     };
     app.use(cors(corsOptions));
     app.use('/api/auth', require('./routes/auth'));
