@@ -7,7 +7,7 @@ const port = 5000
 connectToMongoDB()
 app.use(express.json())
 app.get('/', (req, res) => {
-  res.send('!')
+  res.send('This is backend')
 })
 const corsOptions = {
   origin:"https://mycloudbook.vercel.app"
